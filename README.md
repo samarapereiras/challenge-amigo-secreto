@@ -58,7 +58,7 @@ sorteio-amigos/
 ## 🔗 Demonstração
 
 Caso publicado no GitHub Pages, o link ficará disponível aqui:
-👉 [Sorteador de Amigo Secreto - Online](https://challenge-amigo-secreto-amber-delta.vercel.app/)
+👉 [Sorteador de Amigo Secreto - Online](https://samarapereiras.github.io/challenge-amigo-secreto/)
 
 ## ✒️ Autor
 
