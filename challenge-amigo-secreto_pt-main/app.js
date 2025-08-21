@@ -50,7 +50,7 @@ function sortearAmigo() {
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = `O amigo sorteado foi: <strong>${amigoSorteado}</strong>`;
     
-    // *** A CORREÇÃO ESTÁ AQUI ***
+
     // Remove o amigo que acabou de ser sorteado da lista, usando o método splice()
     amigos.splice(indiceSorteado, 1);
     
