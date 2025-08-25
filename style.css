@@ -16,115 +16,140 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--color-primary);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Inter", sans-serif;
 }
 
+/* Container principal */
 .main-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 90vh;
+    background: var(--color-primary);
 }
 
 /* Banner */
 .header-banner {
-    flex: 40%;
+    flex: 1 1 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    padding-top: 5%;
 }
 
 /* Seção de entrada */
 .input-section {
-    flex: 60%;
+    flex: 1 1 60%;
     background-color: var(--color-secondary);
-    border: 1px solid #000;
     border-radius: 64px 64px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 5% 10%;
     width: 100%;
 }
 
 /* Títulos */
 .main-title {
-    font-size: 48px;
+    font-size: clamp(32px, 5vw, 48px);
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
     color: var(--color-white);
+    text-align: center;
 }
 
 .section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
+    font-size: clamp(24px, 4vw, 36px);
     font-weight: 700;
     color: var(--color-primary);
     margin: 10px 0;
     text-align: center;
 }
 
-/* Contêineres de entrada e botão - Ajustado para que o botão "Adicionar" fique junto ao input */
+/* Contêiner input e botão */
 .input-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
     max-width: 600px;
-    margin-top: 20px;
+    margin-top: 2%;
 }
 
 .input-name {
-    width: 100%;
+    flex: 1;
     padding: 10px;
     border: 2px solid #000;
     border-radius: 25px 0 0 25px;
     font-size: 16px;
 }
 
-/* Contêiner dos botões de ação */
-.button-container {
-    display: flex; /* Alinha os botões lado a lado */
-    justify-content: center; /* Centraliza os botões */
-    width: 100%;
-    gap: 15px; /* Adiciona espaço entre os botões */
-    margin-top: 20px;
-}
-
-/* Estilos de botão */
+/* Botões */
 button {
     padding: 15px 30px;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .button-add {
     background-color: var(--color-tertiary);
     color: var(--color-text);
     border-radius: 0 25px 25px 0;
-    padding: 10px 20px;
 }
 
 .button-add:hover {
     background-color: #a1a1a1;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.button-draw, .button-reset {
+    flex: 1;
+    max-width: 180px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button-draw {
+    background-color: var(--color-button);
+    color: var(--color-white);
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
+
+.button-reset {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+}
+
 /* Listas */
 ul {
-    list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
+    list-style: none;
     font-size: 18px;
+    color: var(--color-text);
     margin: 20px 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .result-list {
@@ -135,23 +160,18 @@ ul {
     text-align: center;
 }
 
-/* Botões de sorteio e reiniciar - Ajustado para que fiquem com a mesma largura */
-.button-draw, .button-reset {
-    width: 180px; /* Define uma largura fixa para os botões */
-    padding: 10px 20px;
-    color: var(--color-white);
-    font-weight: bold;
-}
+/* Responsividade geral */
+@media (max-width: 768px) {
+    .input-section {
+        padding: 5% 5%;
+        border-radius: 32px 32px 0 0;
+    }
 
-.button-draw {
-    background-color: var(--color-button);
-}
+    .main-title {
+        font-size: clamp(24px, 6vw, 36px);
+    }
 
-.button-draw:hover {
-    background-color: var(--color-button-hover);
-}
-
-.button-reset {
-    background-color: var(--color-tertiary); /* Usei a cor terciária para o botão reiniciar */
-    color: var(--color-text);
+    .section-title {
+        font-size: clamp(18px, 5vw, 28px);
+    }
 }
